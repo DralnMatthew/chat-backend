@@ -8,7 +8,12 @@ import { loginSchema } from '@auth/schemes/signin';
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
 import { BadRequestError } from '@global/helpers/error-handler';
 import { userService } from '@services/db/user.service';
-import { IUserDocument } from '@user/interfaces/user.interface';
+import { IResetPasswordParams, IUserDocument } from '@user/interfaces/user.interface';
+import { mailTransport } from '@services/emails/mail.transport';
+import { resetPasswordTemplate } from '@services/emails/templates/reset-password/reset-password-template';
+import { emailQueue } from '@services/queues/email.queue';
+import moment from 'moment';
+import publicIP from 'ip';
 
 export class SignIn {
   @joiValidation(loginSchema)
@@ -34,6 +39,17 @@ export class SignIn {
       },
       config.JWT_TOKEN!
     );
+
+    // const templateParams: IResetPasswordParams = {
+    //   username: existingUser!.username,
+    //   email: existingUser!.email,
+    //   ipaddress: publicIP.address(),
+    //   date: moment().format('DD/MM/YYYY HH:mm')
+    // };
+    
+    // const template: string = resetPasswordTemplate.passwordResetConfirmationTemplate(templateParams);
+    // emailQueue.addEmailJob('forgotPasswordEmail', {template, receiverEmail: 'aurelia21@ethereal.email', subject: 'reset password confirmation'})
+
     req.session = { jwt: userJwt };
     const userDocument: IUserDocument = {
       ...user,
