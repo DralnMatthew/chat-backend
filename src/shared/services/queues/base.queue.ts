@@ -14,8 +14,8 @@ import { IEmailJob, IUserJob } from '@user/interfaces/user.interface';
 // import { IFileImageJobData } from '@image/interfaces/image.interface';
 // import { IChatJobData, IMessageData } from '@chat/interfaces/chat.interface';
 
-type IBaseJobData = IAuthJob;
-//   | IEmailJob
+type IBaseJobData = IAuthJob
+  | IEmailJob;
 //   | IUserJob
 //   | IPostJobData
 //   | IReactionJob
