@@ -14,6 +14,7 @@ import applicationRoutes from '@root/routes';
 import Logger from 'bunyan';
 import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 import { config } from '@root/config';
+import {SocketIOPostHandler} from '@socket/post';
 
 const SERVER_PORT = 5000;
 const log: Logger = config.createLogger('server');
@@ -109,5 +110,8 @@ export class ChatServer {
     });
   }
 
-  private socketIOConnections(io: Server): void {}
+  private socketIOConnections(io: Server): void {
+    const postSocketHandler: SocketIOPostHandler = new SocketIOPostHandler(io);
+    postSocketHandler.listen();
+  }
 }
