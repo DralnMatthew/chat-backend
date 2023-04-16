@@ -2,7 +2,8 @@ import { BaseCache } from '@services/redis/base.cache';
 import Logger from 'bunyan';
 import { config } from '@root/config';
 import { ServerError } from '@global/helpers/error-handler';
-import { ISavePostToCache, IPostDocument, IReactions } from '@post/interfaces/post.interface';
+import { ISavePostToCache, IPostDocument } from '@post/interfaces/post.interface';
+import { IReactions } from '@reaction/interfaces/reaction.interface';
 import { Helpers } from '@global/helpers/helpers';
 import { RedisCommandRawReply } from '@redis/client/dist/lib/commands';
 
