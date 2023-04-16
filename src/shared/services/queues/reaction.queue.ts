@@ -1,6 +1,6 @@
 import { IReactionJob } from '@reaction/interfaces/reaction.interface';
-import { BaseQueue } from '@services/queues/base.queue';
-import { reactionWorker } from '@workers/reaction.worker';
+import { BaseQueue } from '@service/queues/base.queue';
+import { reactionWorker } from '@worker/reaction.worker';
 
 class ReactionQueue extends BaseQueue {
   constructor() {
@@ -9,7 +9,7 @@ class ReactionQueue extends BaseQueue {
     this.processJob('removeReactionFromDB', 5, reactionWorker.removeReactionFromDB);
   }
 
-  public addReactionJob(name: string, data: any): void {
+  public addReactionJob(name: string, data: IReactionJob): void {
     this.addJob(name, data);
   }
 }

@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import { CustomError } from '@global/helpers/error-handler';
 import { SignIn } from '@auth/controllers/signin';
 import { Helpers } from '@global/helpers/helpers';
-import { authService } from '@services/db/auth.service';
+import { authService } from '@service/db/auth.service';
 
 const USERNAME = 'Manny';
 const PASSWORD = 'manny1';
@@ -14,7 +14,7 @@ const LONG_PASSWORD = 'mathematics1';
 const LONG_USERNAME = 'mathematics';
 
 jest.useFakeTimers();
-jest.mock('@services/queues/base.queue');
+jest.mock('@service/queues/base.queue');
 
 describe('SignIn', () => {
   beforeEach(() => {

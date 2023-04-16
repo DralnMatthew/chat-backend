@@ -3,18 +3,18 @@ import { Request, Response } from 'express';
 import { Password } from '@auth/controllers/password';
 import { authMock, authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
 import { CustomError } from '@global/helpers/error-handler';
-import { emailQueue } from '@services/queues/email.queue';
-import { authService } from '@services/db/auth.service';
+import { emailQueue } from '@service/queues/email.queue';
+import { authService } from '@service/db/auth.service';
 
 const WRONG_EMAIL = 'test@email.com';
 const CORRECT_EMAIL = 'manny@me.com';
 const INVALID_EMAIL = 'test';
 const CORRECT_PASSWORD = 'manny';
 
-jest.mock('@services/queues/base.queue');
-jest.mock('@services/queues/email.queue');
-jest.mock('@services/db/auth.service');
-jest.mock('@services/emails/mail.transport');
+jest.mock('@service/queues/base.queue');
+jest.mock('@service/queues/email.queue');
+jest.mock('@service/db/auth.service');
+jest.mock('@service/emails/mail.transport');
 
 describe('Password', () => {
   beforeEach(() => {

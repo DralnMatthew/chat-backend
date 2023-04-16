@@ -29,9 +29,9 @@
       "@post/*": ["src/features/post/*"],
       "@reaction/*": ["src/features/reactions/*"],
       "@global/*": ["src/shared/globals/*"],
-      "@services/*": ["src/shared/services/*"],
+      "@service/*": ["src/shared/services/*"],
       "@socket/*": ["src/shared/sockets/*"],
-      "@workers/*": ["src/shared/workers/*"],
+      "@worker/*": ["src/shared/workers/*"],
       "@root/*": ["src/*"]
     }
   }

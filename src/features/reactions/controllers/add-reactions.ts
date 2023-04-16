@@ -4,8 +4,8 @@ import HTTP_STATUS from 'http-status-codes';
 import { joiValidation } from '@global/decorators/joi-validation.decorators';
 import { addReactionSchema } from '@reaction/schemes/reactions';
 import { IReactionDocument, IReactionJob } from '@reaction/interfaces/reaction.interface';
-import { reactionQueue } from '@services/queues/reaction.queue';
-import { ReactionCache } from '@services/redis/reaction.cache';
+import { reactionQueue } from '@service/queues/reaction.queue';
+import { ReactionCache } from '@service/redis/reaction.cache';
 
 const reactionCache: ReactionCache = new ReactionCache();
 

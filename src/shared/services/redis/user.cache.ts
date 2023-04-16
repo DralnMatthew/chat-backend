@@ -1,4 +1,4 @@
-import { BaseCache } from '@services/redis/base.cache';
+import { BaseCache } from '@service/redis/base.cache';
 import { INotificationSettings, ISocialLinks, IUserDocument } from '@user/interfaces/user.interface';
 import Logger from 'bunyan';
 import { indexOf, findIndex } from 'lodash';

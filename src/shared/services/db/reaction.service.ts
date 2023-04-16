@@ -3,7 +3,7 @@ import { IPostDocument } from '@post/interfaces/post.interface';
 import { PostModel } from '@post/models/post.schema';
 import { IQueryReaction, IReactionDocument, IReactionJob } from '@reaction/interfaces/reaction.interface';
 import { ReactionModel } from '@reaction/models/reaction.schema';
-import { UserCache } from '@services/redis/user.cache';
+import { UserCache } from '@service/redis/user.cache';
 import { IUserDocument } from '@user/interfaces/user.interface';
 import { omit } from 'lodash';
 import mongoose from 'mongoose';

@@ -4,14 +4,14 @@ import * as cloudinaryUploads from '@global/helpers/cloudinary-upload';
 import { SignUp } from '@auth/controllers/signup';
 import { CustomError } from '@global/helpers/error-handler';
 import { authMock, authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
-import { authService } from '@services/db/auth.service';
-import { UserCache } from '@services/redis/user.cache';
+import { authService } from '@service/db/auth.service';
+import { UserCache } from '@service/redis/user.cache';
 
 jest.useFakeTimers();
-jest.mock('@services/queues/base.queue');
-jest.mock('@services/redis/user.cache');
-jest.mock('@services/queues/user.queue');
-jest.mock('@services/queues/auth.queue');
+jest.mock('@service/queues/base.queue');
+jest.mock('@service/redis/user.cache');
+jest.mock('@service/queues/user.queue');
+jest.mock('@service/queues/auth.queue');
 jest.mock('@global/helpers/cloudinary-upload');
 
 describe('SignUp', () => {

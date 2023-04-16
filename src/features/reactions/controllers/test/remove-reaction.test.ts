@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 import { authUserPayload } from '@root/mocks/auth.mock';
-import { ReactionCache } from '@services/redis/reaction.cache';
-import { reactionQueue } from '@services/queues/reaction.queue';
+import { ReactionCache } from '@service/redis/reaction.cache';
+import { reactionQueue } from '@service/queues/reaction.queue';
 import { Remove } from '@reaction/controllers/remove-reaction';
 import { reactionMockRequest, reactionMockResponse } from '@root/mocks/reactions.mock';
 
 jest.useFakeTimers();
-jest.mock('@services/queues/base.queue');
-jest.mock('@services/redis/reaction.cache');
+jest.mock('@service/queues/base.queue');
+jest.mock('@service/redis/reaction.cache');
 
 describe('Remove', () => {
   beforeEach(() => {

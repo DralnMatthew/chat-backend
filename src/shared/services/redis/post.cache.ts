@@ -1,4 +1,4 @@
-import { BaseCache } from '@services/redis/base.cache';
+import { BaseCache } from '@service/redis/base.cache';
 import Logger from 'bunyan';
 import { config } from '@root/config';
 import { ServerError } from '@global/helpers/error-handler';

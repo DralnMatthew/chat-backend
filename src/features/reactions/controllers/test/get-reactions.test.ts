@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import { authUserPayload } from '@root/mocks/auth.mock';
-import { reactionService } from '@services/db/reaction.service';
-import { ReactionCache } from '@services/redis/reaction.cache';
+import { reactionService } from '@service/db/reaction.service';
+import { ReactionCache } from '@service/redis/reaction.cache';
 import { Get } from '@reaction/controllers/get-reactions';
 import { postMockData } from '@root/mocks/post.mock';
 import mongoose from 'mongoose';
 import { reactionData, reactionMockRequest, reactionMockResponse } from '@root/mocks/reactions.mock';
 
 jest.useFakeTimers();
-jest.mock('@services/queues/base.queue');
-jest.mock('@services/redis/reaction.cache');
+jest.mock('@service/queues/base.queue');
+jest.mock('@service/redis/reaction.cache');
 
 describe('Get', () => {
   beforeEach(() => {

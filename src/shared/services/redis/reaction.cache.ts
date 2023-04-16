@@ -1,4 +1,4 @@
-import { BaseCache } from '@services/redis/base.cache';
+import { BaseCache } from '@service/redis/base.cache';
 import Logger from 'bunyan';
 import { find } from 'lodash';
 import { config } from '@root/config';
