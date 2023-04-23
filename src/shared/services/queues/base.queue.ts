@@ -25,8 +25,8 @@ type IBaseJobData = IAuthJob
   | INotificationJobData
   | IFileImageJobData
   | IChatJobData
-  | IMessageData;
-//   | IUserJob;
+  | IMessageData
+  | IUserJob;
 
 /*=============================================
 =            WHAT REALLY HAPPENS FOR EACH JOB            =
