@@ -1,0 +1,84 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
+
+###
+POST {{baseUrl}}/{{urlPath}}/chat/message
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "conversationId": "64425b14213dbaed7e67cf31",
+  "receiverId": "643fa450c2d94f8589a6d79d",
+  "receiverUsername": "Jony",
+  "receiverAvatarColor": "blue",
+  "receiverProfilePicture": "https://res.cloudinary.com/dyamr9ym3/image/upload/v1681892433/643fa450c2d94f8589a6d79d",
+  "body": "Tomorrow is an bad day",
+  "gifUrl": "",
+  "isRead": false,
+  "selectedImage": ""
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/chat/message/add-chat-users
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "userOne": "643fa44bc2d94f8589a6d796",
+  "userTwo": "643fa450c2d94f8589a6d79d"
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/chat/message/remove-chat-users
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "userOne": "62f2962c6b761b208a728e91",
+  "userTwo": "62f29f71da585226216b2724"
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/chat/message/conversation-list
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/chat/message/user/643fa450c2d94f8589a6d79d
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/chat/message/mark-as-deleted/64425b14213dbaed7e67cf30/643fa44bc2d94f8589a6d796/643fa450c2d94f8589a6d79d/deleteForEveryone
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+PUT {{baseUrl}}/{{urlPath}}/chat/message/mark-as-read
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "senderId": "643fa44bc2d94f8589a6d796",
+  "receiverId": "643fa450c2d94f8589a6d79d"
+}
+
+###
+PUT {{baseUrl}}/{{urlPath}}/chat/message/reaction
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "conversationId": "64425b14213dbaed7e67cf31",
+  "messageId": "64426cef213dbaed7e67cf37",
+  "reaction": "happy",
+  "type": "add"
+}
