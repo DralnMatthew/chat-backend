@@ -14,16 +14,13 @@ class PostService {
   public async getPosts(query: IGetPostsQuery, skip = 0, limit = 0, sort: Record<string, 1 | -1>): Promise<IPostDocument[]> {
     let postQuery = {};
     if (query?.imgId && query?.gifUrl) {
-      postQuery = { $or: [{ imgId: { $ne: '' } }, { gifUrl: { $ne: '' }}] };
+      postQuery = { $or: [{ imgId: { $ne: '' } }, { gifUrl: { $ne: '' } }] };
+    } else if (query?.videoId) {
+      postQuery = { $or: [{ videoId: { $ne: '' } }] };
     } else {
       postQuery = query;
     }
-    const posts: IPostDocument[] = await PostModel.aggregate([
-      { $match: postQuery },
-      { $sort: sort },
-      { $skip: skip },
-      { $limit: limit }
-    ]);
+    const posts: IPostDocument[] = await PostModel.aggregate([{ $match: postQuery }, { $sort: sort }, { $skip: skip }, { $limit: limit }]);
     return posts;
   }
 
