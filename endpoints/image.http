@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
+
+###
+GET {{baseUrl}}/{{urlPath}}/images/643fa44bc2d94f8589a6d796
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/images/profile
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAAMyAQMAAABtkHM/AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAFiS0dEAf8CLd4AAABrSURBVBgZ7cGBAAAAAMOg+1NP4AjVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjgBSwwABwrL8wAAAAABJRU5ErkJggg=="
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/images/background
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+# For this endpoint, image value is either
+# - a base64 encoded string for a new image or
+# - an already existing cloudinary image url
+
+{
+  "image": "https://res.cloudinary.com/dyamr9ym3/image/upload/v1681892428/643fa44bc2d94f8589a6d796"
+}
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/images/6442355d8b746ce2afa54ba8
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/images/background/643fa44bc2d94f8589a6d796
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
